@@ -21,10 +21,33 @@ const superheros = [
     }
 ]
 
+const heroesOrderedByDate = [...superheros];
+
 function getSortedSuperheros(heros) {
     // your code goes here
-}
+    heros.sort((a, b) => { 
+        const firstDate = new Date(a.date);
+        const secondDate = new Date(b.date);
+
+        return firstDate - secondDate;
+    }); 
+    
+    return heros;
+ }
+
+console.log(getSortedSuperheros(heroesOrderedByDate));
+
 
 function specialLogs(interval) {
-    // your code goes here
+    let count = 0;
+    const intervalCounter = setInterval(() => { 
+        count++;
+        console.log(count);
+        
+        if(count === 10) { 
+            clearInterval(intervalCounter);
+        }
+    }, interval);
 }
+
+specialLogs(1000);
