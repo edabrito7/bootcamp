@@ -37,15 +37,16 @@ console.log(getSortedSuperheros(superheros));
 
 function specialLogs(interval) {
   // your code goes here
-  function specialLogs(interval) {
-    let count = 0;
-    const intervalCounter = setInterval(() => {
-      count++;
-      console.log(count);
 
-      if (count === 10) {
-        clearInterval(intervalCounter);
-      }
-    }, interval);
-  }
+  let count = 0;
+  const intCounter = setInterval(() => {
+    count++;
+    console.log(count);
+
+    if (count === 10) {
+      clearInterval(intCounter);
+    }
+  }, interval);
 }
+
+specialLogs(1000);
