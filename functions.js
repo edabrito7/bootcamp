@@ -21,10 +21,10 @@ const superheros = [
     }
 ]
 
-/*function getSortedSuperheros(heros) {
+function getSortedSuperheros(heros) {
     return heros.sort((a,b) => new Date(a.date) - new Date(b.date));
 }
-console.log(getSortedSuperheros(superheros));*/
+console.log(getSortedSuperheros(superheros));
 
 function specialLogs(interval) {
     let contador = 1;
