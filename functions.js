@@ -22,8 +22,9 @@ const superheros = [
 ]
 
 function getSortedSuperheros(heros) {
-    // your code goes here
+    return heros.sort((a,b) => new Date(a.date) - new Date(b.date));
 }
+console.log(getSortedSuperheros(superheros));
 
 function specialLogs(interval) {
     // your code goes here
