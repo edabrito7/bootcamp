@@ -22,9 +22,34 @@ const superheros = [
 ]
 
 function getSortedSuperheros(heros) {
-    // your code goes here
+    return heros.sort((a,b) => new Date(a.date) - new Date(b.date));
 }
+console.log(getSortedSuperheros(superheros));
 
 function specialLogs(interval) {
-    // your code goes here
+    let contador = 1;
+    
+    function logNum() {
+        console.log(contador);
+        contador++;
+    
+        if (contador <= 10) {
+        setTimeout(logNum, interval); //Indicó función que se ejecutará después del temporizador y el tiempo del 
+        }                             //temporizador
+        else{
+            process.exit(); //Para que se pueda ingresar el valor del intervalo por teclado
+        }                   //y hacer la ejecución correctamente
+    }
+    return logNum();
 }
+    
+//↓↓ Ejemplo de uso con un intervalo de 2000 milisegundos (2 segundos)
+//specialLogs(2000);
+
+console.log("Ingrese valor del intervalo:");
+
+//process.stdin() --> El flujo de entrada estándar, que es una fuente de entrada para el programa en NodeJs
+process.stdin.on('data', function(data){ //Utilizo la función on() para escuchar el evento.
+    let intervalo = parseInt(data); //Asigno la entrada a una variable
+    specialLogs(intervalo); } //Llamó a la función para hacer la impresión
+    );
